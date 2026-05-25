@@ -56,6 +56,11 @@ resource "azurerm_application_gateway" "main" {
     tier = "WAF_v2"
   }
 
+  ssl_policy {
+    policy_type = "Predefined"
+    policy_name = "AppGwSslPolicy20220101"
+  }
+
   autoscale_configuration {
     min_capacity = 0
     max_capacity = 2
